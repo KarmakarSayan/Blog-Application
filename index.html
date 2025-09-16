@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBlog - SAYAN KARMAKAR</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 shadow-sm backdrop-blur-lg border-b border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-2xl font-bold gradient-text">TechBlog</a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#" class="font-medium hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Home</a>
+                    <a href="#features" class="font-medium hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Features</a>
+                    <a href="#categories" class="font-medium hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Categories</a>
+                    <a href="#about" class="font-medium hover:text-blue-500 dark:hover:text-blue-400 transition-colors">About</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-moon hidden dark:inline-block"></i>
+                    <i class="fas fa-sun inline-block dark:hidden"></i>
+                </button>
+                <div class="relative">
+                    <button id="search-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div id="search-box" class="hidden absolute right-0 mt-2 w-72 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-2 border border-gray-200 dark:border-gray-700">
+                        <input type="text" id="search-input" placeholder="Search blogs..." class="w-full px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+                
+                <!-- Removed admin buttons -->
+
+                <a href="#subscribe" class="hidden md:block px-4 py-2 gradient-bg text-white rounded-lg font-medium hover:opacity-90 transition-opacity">Subscribe</a>
+                
+                <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg border-t border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#" class="py-2 font-medium hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Home</a>
+                <a href="#features" class="py-2 font-medium hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Features</a>
+                <a href="#categories" class="py-2 font-medium hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Categories</a>
+                <a href="#about" class="py-2 font-medium hover:text-blue-500 dark:hover:text-blue-400 transition-colors">About</a>
+                <a href="#subscribe" class="px-4 py-2 gradient-bg text-white rounded-lg font-medium text-center hover:opacity-90 transition-opacity">Subscribe</a>
+                <!-- Removed admin buttons from mobile menu -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900">
+            <div class="absolute inset-0 opacity-20">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a7650a7c-a2c9-4d96-a628-8f4224ab55d4.png" alt="Abstract technology background" class="w-full h-full object-cover" />
+            </div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Explore the World of <span class="gradient-text">Technology</span></h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Your ultimate destination for tech insights, tutorials, and cutting-edge innovations. Written by students for students.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#recent-posts" class="px-8 py-3 gradient-bg text-white rounded-lg font-bold hover:opacity-90 transition-opacity">Read Articles</a>
+                    <a href="#submit-article" class="px-8 py-3 border-2 border-blue-500 text-blue-500 dark:text-blue-400 rounded-lg font-bold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-900 dark:hover:text-white transition-colors">Submit Article</a>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 dark:from-gray-900 to-transparent"></div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-16 bg-white dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Key <span class="gradient-text">Features</span></h2>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Our blog comes packed with features that enhance your reading and learning experience
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
+                        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center text-white mb-6"><i class="fas fa-book-open text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Educational Content</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Detailed articles covering various B.Tech subjects with practical explanations.</p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
+                        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center text-white mb-6"><i class="fas fa-code text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Code Examples</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Practical implementation with well-commented code snippets in multiple languages.</p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
+                        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center text-white mb-6"><i class="fas fa-project-diagram text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Project Ideas</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Innovative project concepts for B.Tech students with implementation guides.</p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
+                        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center text-white mb-6"><i class="fas fa-bolt text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Quick Tips</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Short posts with useful tips and tricks for academics and professional development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Posts Section -->
+        <section id="recent-posts" class="py-16 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-12 gap-6">
+                    <h2 class="text-3xl font-bold whitespace-nowrap">Recent <span class="gradient-text">Articles</span></h2>
+                    <div id="category-filters" class="flex space-x-2 overflow-x-auto scroll-bar pb-2">
+                        <button class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-200 rounded-full font-medium whitespace-nowrap" data-category="All">All</button>
+                        <button class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full font-medium whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-700" data-category="AI/ML">AI/ML</button>
+                        <button class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full font-medium whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-700" data-category="Web Dev">Web Dev</button>
+                        <button class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full font-medium whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-700" data-category="Data Science">Data Science</button>
+                        <button class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full font-medium whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-700" data-category="Cybersecurity">Cybersecurity</button>
+                        <button class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full font-medium whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-700" data-category="IoT">IoT</button>
+                    </div>
+                </div>
+                <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Dynamic articles will be prepended here -->
+                    <article class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm card-hover h-full flex flex-col static-article" data-id="1" data-category="AI/ML">
+                        <div class="relative aspect-video overflow-hidden cursor-pointer">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/055bf1b0-9c16-4f57-8c3f-18fe9f100f41.png" alt="Building Neural Networks from Scratch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            <div class="absolute bottom-4 left-4 px-2 py-1 bg-gray-100 dark:bg-gray-900 rounded-full text-xs font-medium">AI/ML</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2 line-clamp-2">Building Neural Networks from Scratch: A Beginner's Guide</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">Learn how neural networks work by implementing one from scratch in Python...</p>
+                            <div class="flex items-center justify-between text-sm mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-8 h-8 rounded-full overflow-hidden bg-gray-200"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/555bdd3f-e25d-47c8-99aa-ec4f7dd79e2f.png" alt="Rajesh Kumar" class="w-full h-full object-cover" /></div>
+                                    <span class="font-medium">Rajesh Kumar</span>
+                                </div>
+                                <span class="text-gray-500">3 days ago</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm card-hover h-full flex flex-col static-article" data-id="2" data-category="Web Dev">
+                        <div class="relative aspect-video overflow-hidden cursor-pointer">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ba49b99b-ca7c-4eff-ab07-a4ede9de3f29.png" alt="Building Scalable Web Apps with React" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            <div class="absolute bottom-4 left-4 px-2 py-1 bg-gray-100 dark:bg-gray-900 rounded-full text-xs font-medium">Web Dev</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2 line-clamp-2">The Complete Guide to Building Scalable Web Applications with React</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">Discover best practices for architecting scalable web applications using React...</p>
+                            <div class="flex items-center justify-between text-sm mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-8 h-8 rounded-full overflow-hidden bg-gray-200"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a5952bea-1dae-438a-8907-c92d88d867f4.png" alt="Priya Sharma" class="w-full h-full object-cover" /></div>
+                                    <span class="font-medium">Priya Sharma</span>
+                                </div>
+                                <span class="text-gray-500">1 week ago</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm card-hover h-full flex flex-col static-article" data-id="3" data-category="Data Science">
+                        <div class="relative aspect-video overflow-hidden cursor-pointer">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5adeaa2b-061a-4e81-9482-9358f087636b.png" alt="Effective Data Visualization Techniques" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            <div class="absolute bottom-4 left-4 px-2 py-1 bg-gray-100 dark:bg-gray-900 rounded-full text-xs font-medium">Data Science</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2 line-clamp-2">Effective Data Visualization Techniques for Better Insights</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">Master the art of data storytelling with Python visualization libraries...</p>
+                            <div class="flex items-center justify-between text-sm mt-auto">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-8 h-8 rounded-full overflow-hidden bg-gray-200"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9d744a58-c325-4cdc-84ed-a978237fbac4.png" alt="Amit Patel" class="w-full h-full object-cover" /></div>
+                                    <span class="font-medium">Amit Patel</span>
+                                </div>
+                                <span class="text-gray-500">2 weeks ago</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" id="view-all-articles" class="px-6 py-3 border-2 border-blue-500 text-blue-500 dark:text-blue-400 rounded-lg font-bold hover:bg-blue-500 hover:text-white dark:hover:bg-blue-900 dark:hover:text-white transition-colors inline-flex items-center gap-2">
+                        View All Articles <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Tags/Categories Section -->
+        <section id="categories" class="py-16 bg-white dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Browse by <span class="gradient-text">Category</span></h2>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Discover content organized by popular topics and technologies.</p>
+                </div>
+                <div id="categories-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <a href="#" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center group">
+                        <div class="w-12 h-12 mx-auto gradient-bg rounded-full flex items-center justify-center text-white mb-2 transition-transform group-hover:scale-110"><i class="fas fa-robot text-xl"></i></div>
+                        <h3 class="font-bold">AI/ML</h3><p class="text-sm text-gray-500">12 Articles</p>
+                    </a>
+                    <a href="#" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center group">
+                        <div class="w-12 h-12 mx-auto gradient-bg rounded-full flex items-center justify-center text-white mb-2 transition-transform group-hover:scale-110"><i class="fas fa-laptop-code text-xl"></i></div>
+                        <h3 class="font-bold">Web Dev</h3><p class="text-sm text-gray-500">24 Articles</p>
+                    </a>
+                    <a href="#" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center group">
+                        <div class="w-12 h-12 mx-auto gradient-bg rounded-full flex items-center justify-center text-white mb-2 transition-transform group-hover:scale-110"><i class="fas fa-database text-xl"></i></div>
+                        <h3 class="font-bold">Data Science</h3><p class="text-sm text-gray-500">18 Articles</p>
+                    </a>
+                    <a href="#" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center group">
+                        <div class="w-12 h-12 mx-auto gradient-bg rounded-full flex items-center justify-center text-white mb-2 transition-transform group-hover:scale-110"><i class="fas fa-shield-alt text-xl"></i></div>
+                        <h3 class="font-bold">Cybersecurity</h3><p class="text-sm text-gray-500">9 Articles</p>
+                    </a>
+                    <a href="#" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center group">
+                        <div class="w-12 h-12 mx-auto gradient-bg rounded-full flex items-center justify-center text-white mb-2 transition-transform group-hover:scale-110"><i class="fas fa-microchip text-xl"></i></div>
+                        <h3 class="font-bold">Embedded Systems</h3><p class="text-sm text-gray-500">7 Articles</p>
+                    </a>
+                    <a href="#" class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center group">
+                        <div class="w-12 h-12 mx-auto gradient-bg rounded-full flex items-center justify-center text-white mb-2 transition-transform group-hover:scale-110"><i class="fas fa-network-wired text-xl"></i></div>
+                        <h3 class="font-bold">IoT</h3><p class="text-sm text-gray-500">11 Articles</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Post Section -->
+        <section class="py-16 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm">
+                    <div class="grid md:grid-cols-2">
+                        <div class="relative aspect-square md:aspect-auto">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/40972c6a-5c1d-46b1-9c43-2c6a414220b2.png" alt="Featured post image" class="w-full h-full object-cover" />
+                            <div class="absolute bottom-4 left-4 px-3 py-1 bg-white/80 dark:bg-gray-900/80 backdrop-blur rounded-full text-sm font-medium">Featured Article</div>
+                        </div>
+                        <div class="p-8 md:p-12 flex flex-col justify-center">
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-10 h-10 rounded-full overflow-hidden"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a11d909f-76f6-44f8-9a5f-9e79a7e5bead.png" alt="Author portrait" class="w-full h-full object-cover" /></div>
+                                <div>
+                                    <p class="font-medium">Dr. Neha Gupta</p>
+                                    <p class="text-sm text-gray-500">Professor, IIT Bombay</p>
+                                </div>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">The Future of Quantum Computing: Breakthroughs and Challenges</h2>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">Quantum computing represents a paradigm shift in computational power...</p>
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-200 rounded-full text-sm">Quantum Computing</span>
+                                <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-200 rounded-full text-sm">Physics</span>
+                                <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-200 rounded-full text-sm">Research</span>
+                            </div>
+                            <a href="#" id="read-featured-article" class="w-fit px-6 py-3 gradient-bg text-white rounded-lg font-bold hover:opacity-90 transition-opacity inline-flex items-center gap-2">
+                                Read Full Article <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section id="subscribe" class="py-16 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Stay Updated with Tech Trends</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">Subscribe to our newsletter and receive weekly updates on new articles, projects, and technology insights.</p>
+                    <form id="subscribe-form" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700" required />
+                        <button type="submit" class="px-6 py-3 gradient-bg text-white rounded-lg font-bold hover:opacity-90 transition-opacity">Subscribe</button>
+                    </form>
+                    <p class="text-xs text-gray-400 mt-4">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-white dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">About <span class="gradient-text">TechBlog</span></h2>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">A platform created by B.Tech students for the academic community to share knowledge and stay updated...</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center text-white mb-4 mx-auto"><i class="fas fa-graduation-cap text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3 text-center">For Students</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-center">Comprehensive guides, tutorials, and project ideas to help you excel...</p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center text-white mb-4 mx-auto"><i class="fas fa-laptop-code text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3 text-center">By Students</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-center">Authentic content written by peers who understand the challenges...</p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center text-white mb-4 mx-auto"><i class="fas fa-lightbulb text-2xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3 text-center">Innovation Focus</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-center">Emphasis on practical applications, problem-solving approaches...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Submit Article Section -->
+    <section id="submit-article" class="py-16 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm p-8 md:p-12">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">Contribute to TechBlog</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-8">
+                    Share your knowledge with the community. Submit your article for review and get published on TechBlog.
+                </p>
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700" placeholder="Enter your name" required />
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700" placeholder="Enter your email" required />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="category" class="block text-sm font-medium mb-2">Article Category</label>
+                        <select id="category" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="AI/ML">AI/ML</option>
+                            <option value="Web Dev">Web Development</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="IoT">Internet of Things</option>
+                            <option value="Embedded Systems">Embedded Systems</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="title" class="block text-sm font-medium mb-2">Article Title</label>
+                        <input type="text" id="title" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700" placeholder="Enter article title" required />
+                    </div>
+                    <div>
+                        <label for="abstract" class="block text-sm font-medium mb-2">Abstract/Summary</label>
+                        <textarea id="abstract" rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700" placeholder="Briefly describe your article" required></textarea>
+                    </div>
+                    <div>
+                        <label for="file" class="block text-sm font-medium mb-2">Upload Article (PDF/DOCX)</label>
+                        <input type="file" id="file" class="block w-full text-sm text-gray-500
+                          file:mr-4 file:py-2 file:px-4
+                          file:rounded-lg file:border-0
+                          file:text-sm file:font-medium
+                          file:gradient-bg file:text-white
+                          hover:file:opacity-90" accept=".pdf,.docx" required />
+                    </div>
+                    <div class="flex items-center">
+                        <input id="terms" type="checkbox" class="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" required />
+                        <label for="terms" class="ml-2 block text-sm text-gray-600 dark:text-gray-300">
+                            I agree to the <a href="#" class="text-blue-500 hover:underline">terms and conditions</a> and confirm that this is my original work.
+                        </label>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-4 gradient-bg text-white rounded-lg font-bold hover:opacity-90 transition-opacity">
+                        Submit Article for Review
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">TechBlog</h3>
+                    <p class="mb-4">The premier destination for B.Tech students to share knowledge.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white"><i class="fab fa-github"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#recent-posts" class="hover:text-white transition-colors">Articles</a></li>
+                        <li><a href="#categories" class="hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">AI/ML</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Data Science</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cybersecurity</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">IoT</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start space-x-3"><i class="fas fa-map-marker-alt mt-1"></i><span>Arka Jain University, Jharkhand</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-envelope"></i><span>sayan18karmakr@gmail.com</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-phone-alt"></i><span>+91-7667093728</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 py-8 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2023 TechBlog. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Article Modal -->
+    <div id="article-modal" class="modal-hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content scroll-bar">
+            <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+            <img id="modal-img" src="" alt="Article Image" class="w-full h-64 object-cover rounded-lg mb-6 hidden">
+            <video id="modal-video" class="w-full rounded-lg mb-6 hidden" controls></video>
+            <h2 id="modal-title" class="text-3xl font-bold mb-4"></h2>
+            <div class="flex items-center space-x-3 mb-6 text-sm">
+                <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-200"><img id="modal-author-img" src="" alt="Author" class="w-full h-full object-cover" /></div>
+                <div>
+                    <p id="modal-author-name" class="font-medium"></p>
+                    <p id="modal-date" class="text-gray-500"></p>
+                </div>
+            </div>
+            <div id="modal-body" class="prose dark:prose-invert max-w-none"></div>
+        </div>
+    </div>
+    
+    <!-- Notification Toast -->
+    <div id="notification" class="fixed bottom-5 right-5 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 translate-y-10 transition-all duration-300 z-[101]"></div>
+    <!-- ...other code... -->
+<section id="submit-article" class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm p-8 md:p-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Contribute to TechBlog</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-8">
+                Share your knowledge with the community. Submit your article for review and get published on TechBlog.
+            </p>
+            <form id="submit-article-form" class="space-y-6">
+                <!-- form fields (unchanged) -->
+                <!-- ... -->
+            </form>
+        </div>
+    </div>
+</section>
+<!-- ...other code... -->
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
